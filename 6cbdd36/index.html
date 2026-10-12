@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeCert blog feat/add-realtime-verify</title>
+<style>:root {
+  --ink: #1a1a1a; --paper: #fdfdfc; --rule: #d8d6d1; --soft: #6b6862;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8e6e1; --paper: #16161a; --rule: #34343a; --soft: #9a978f;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 2.5rem 1rem 4rem;
+  background: var(--paper); color: var(--ink);
+  font: 16px/1.55 ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+main { max-width: 48rem; margin: 0 auto; }
+h1 {
+  font-size: 1rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--soft); margin: 0 0 1.5rem;
+}
+.score { font-size: 3.5rem; font-weight: 700; line-height: 1; margin: 0; }
+.score small { font-size: 1.25rem; font-weight: 400; color: var(--soft); }
+.caveat { color: var(--soft); margin: .5rem 0 0; }
+.subject { margin: 1.5rem 0 2.5rem; color: var(--soft); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+table { width: 100%; border-collapse: collapse; margin: 0 0 2rem; }
+th {
+  text-align: left; font-size: .75rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--soft); font-weight: 600;
+  padding: 0 .75rem .5rem 0; border-bottom: 1px solid var(--rule);
+}
+td {
+  padding: .75rem .75rem .75rem 0; vertical-align: top;
+  border-bottom: 1px solid var(--rule);
+}
+td.band { font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.evidence { color: var(--soft); font-size: .9rem; }
+.panel {
+  border: 1px solid var(--rule); border-radius: .5rem;
+  padding: 1rem 1.25rem; margin: 0 0 1.5rem;
+}
+.panel h2 {
+  font-size: .75rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--soft); margin: 0 0 .5rem;
+}
+footer {
+  border-top: 1px solid var(--rule); padding-top: 1.5rem;
+  color: var(--soft); font-size: .875rem;
+}
+footer a { color: inherit; }
+@media (max-width: 34rem) {
+  td.evidence, th.evidence { display: none; }
+  .score { font-size: 2.5rem; }
+}
+</style>
+</head>
+<body>
+<main>
+<h1>VibeCert</h1>
+<p class="score">2.3<small>/3</small></p>
+<p class="subject"><code>blog</code>, <code>feat/add-realtime-verify</code> &middot; 5 commits &middot; 2946 changed lines &middot; 38% generated</p>
+<table>
+<thead><tr><th>Metric</th><th>Score</th><th>Adjusted</th><th class="evidence">Evidence</th></tr></thead>
+<tbody>
+<tr><td>1. Follow-up questions</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">Most questions reference specific output, such as #11 asking whether the code removes existing signatures, #15 on staged versus working-tree signing, #57 asking where the CDN scripts lack integrity hashes, and #64 on why there are several integrity lines, and these could only be asked by someone who had read the generated code.</td></tr>
+<tr><td>2. Coding guidelines</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">Every applicable rule file (INDEX, coding, git, javascript) was in context and the commit subjects are lowercase, under 50 characters and use Angular types, but two of the five commits (refactor(ci), chore(ci)) use a scope although the git rule reserves scope for monorepos, so compliance is partial, and nothing in the evidence shows a rule changing a decision.</td></tr>
+<tr><td>3. Output amendments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">147 of 256 generated lines were rewritten after the author challenged them</td></tr>
+<tr><td>4. Prompt granularity</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">Median generated lines per producing prompt is 6 (38 of 85 prompts produced output), well under 50, and most prompts name small units such as &#x27;make the inlined cert sections collapsable&#x27; and &#x27;reduce the space between the sections&#x27;, though the 121-line opening prompt was a pasted spec that produced a feature.</td></tr>
+<tr><td>5. Secondary tool usage</td><td class="band">2/3</td><td class="band">1/3</td><td class="evidence">behavioural checks configured and did not run</td></tr>
+<tr><td>6. Generative comments</td><td class="band">3/3</td><td class="band">3/3</td><td class="evidence">0 comment lines over 190 lines of code, against a repository baseline of 0.0</td></tr>
+</tbody>
+</table>
+<div class="panel"><h2>Weight</h2><p>Carried weight 3, being the highest of length 3, criticality 3 and risk 1.</p></div>
+<footer><p><code>6cbdd36</code> &middot; issued 2026-10-12 &middot; scored under vibecert/rubrics@1</p><p>A VibeCert score is self-assessed. It records how generative tooling was used on one branch, not that the code is correct. <a href="https://l.martinchapman.co.uk/vibecert">What this measures</a>.</p></footer>
+</main>
+</body>
+</html>
