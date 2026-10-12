@@ -1,0 +1,85 @@
+{
+ "schema_version": "vibecert/certificate@1",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-12T17:09:12.076443+00:00",
+ "identifier": "b2cd378",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 4,
+ "changed_lines": 945,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Questions on the branch name specific identifiers and decisions that only someone who had read the output would ask, such as #71 (OpenAICompatibleBackend inheriting from the vLLM backend), #73 (whether ConcurrentBackend and VLLMBackend are a pure split with no optimisations), #83 (why the URL is now optional), #86 (why a change moved code into a separate method), #98 (how datagen works if Bedrock omits modelOutput) and #106 (chain.from_iterable)."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The coding, Python and git rules were all in context and the commit subjects (lower-case conventional form, under 50 characters) comply, but nothing in the evidence shows a rule changing a decision, and I did not check the Python diff against the Python rule file line by line."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "429 of 847 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "Median generated lines per producing prompt was 53 (21 of 119 prompts produced output), just inside the 50 to 200 band, with prompts mostly naming a unit of work (e.g. 'Implement the Step 2 file name change', 'add finalise hook (2)') but a few larger ones such as the 353-line S3 specification reader."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "4 comment lines over 651 lines of code, against a repository baseline of 0.028"
+  }
+ ],
+ "findings": [
+  "S105: Possible hardcoded password assigned to: \"secret\"",
+  "S105: Possible hardcoded password assigned to: \"session_token\"",
+  "S106: Possible hardcoded password assigned to argument: \"secret\"",
+  "S608: Possible SQL injection vector through string-based query construction"
+ ]
+}
