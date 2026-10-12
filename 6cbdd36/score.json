@@ -1,0 +1,80 @@
+{
+ "schema_version": "vibecert/certificate@1",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-12T10:50:00.435115+00:00",
+ "identifier": "6cbdd36",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "blog",
+ "branch": "feat/add-realtime-verify",
+ "commits": 5,
+ "changed_lines": 2946,
+ "generative_proportion": 0.381,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 1,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most questions reference specific output, such as #11 asking whether the code removes existing signatures, #15 on staged versus working-tree signing, #57 asking where the CDN scripts lack integrity hashes, and #64 on why there are several integrity lines, and these could only be asked by someone who had read the generated code."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "Every applicable rule file (INDEX, coding, git, javascript) was in context and the commit subjects are lowercase, under 50 characters and use Angular types, but two of the five commits (refactor(ci), chore(ci)) use a scope although the git rule reserves scope for monorepos, so compliance is partial, and nothing in the evidence shows a rule changing a decision."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "147 of 256 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 6 (38 of 85 prompts produced output), well under 50, and most prompts name small units such as 'make the inlined cert sections collapsable' and 'reduce the space between the sections', though the 121-line opening prompt was a pasted spec that produced a feature."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "behavioural checks configured and did not run"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 190 lines of code, against a repository baseline of 0.0"
+  }
+ ],
+ "findings": []
+}
