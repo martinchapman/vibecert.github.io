@@ -1,0 +1,83 @@
+{
+ "schema_version": "vibecert/certificate@1",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-15T18:56:58.887241+00:00",
+ "identifier": "1a90271",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 14,
+ "changed_lines": 406,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most of the roughly dozen questions are about specific output, such as #21 'Why has the description changed here?', #22 (which quotes the assistant's own wording and probes a race condition), #28 (could the recorded dict be post-computed), #37 (is there repetition after the ruff refactor) and #11 (why not SchemaInfo objects), so at least one could only come from someone who had read the output."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The Python, coding, git and INDEX rules that covered this Python change were all in context (the two 'never read' guideline files are vendored litellm docs in .venv, not this project's), and all 14 commit subjects follow the required conventional, lowercase, short, no-scope form, which shows the git rule was applied; I did not check the Python diff against the coding rules."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "45 of 386 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 11 (19 of 42 prompts produced output), well under 50, and prompts name discrete plan units such as 'Implement 3.2' and 'Proceed with 4.1', with the largest single prompt at 91 lines."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 303 lines of code, against a repository baseline of 0.024"
+  }
+ ],
+ "findings": [
+  "S106: Possible hardcoded password assigned to argument: \"secret\"",
+  "S608: Possible SQL injection vector through string-based query construction"
+ ]
+}
