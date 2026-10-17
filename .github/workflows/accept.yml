@@ -1,0 +1,49 @@
+name: accept
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+jobs:
+  accept:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - id: changes
+        uses: dorny/paths-filter@v4
+        with:
+          filters: |
+            all: '**'
+          list-files: json
+      - name: Check out submitted files as data
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: submission
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@v6
+      - name: Check submission
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          SUBMITTER: ${{ github.event.pull_request.user.id }}
+          CHANGED: ${{ steps.changes.outputs.all_files }}
+        run: |
+          mapfile -t changed < <(jq -r '.[]' <<< "$CHANGED")
+          uvx --from "git+https://git.sr.ht/~martinchapman/claude-skills@dd4bb6efc7d59d51f1c4753b5dfe41d936ca29b6#subdirectory=vibecert/scripts" \
+            vibecert-accept submission --submitter "$SUBMITTER" \
+            --site-url https://vibecert.github.io --changed "${changed[@]}"
+  merge:
+    needs: accept
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          gh pr merge "$PR" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$HEAD"
+          gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main
