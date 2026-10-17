@@ -15,13 +15,14 @@ jobs:
           filters: |
             all: '**'
           list-files: json
+      - uses: astral-sh/setup-uv@v6
       - name: Check out submitted files as data
         uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           path: submission
           persist-credentials: false
-      - uses: astral-sh/setup-uv@v6
+          allow-unsafe-pr-checkout: true
       - name: Check submission
         env:
           GITHUB_TOKEN: ${{ github.token }}
