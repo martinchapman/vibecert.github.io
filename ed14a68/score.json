@@ -1,0 +1,86 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-17T15:25:23.036868+00:00",
+ "identifier": "ed14a68",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 3,
+ "head": "dd4bb6efc7d59d51f1c4753b5dfe41d936ca29b6",
+ "uncommitted": true,
+ "changed_lines": 1489,
+ "generative_proportion": 0.994,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most follow-up questions interrogate specific decisions in the output: \"vibecert publish pushes what on a handwritten branch if there's no cert?\", \"Isn't this outside the scope of the current branch?\", and \"does clicking the link still show the static cert? ... can we have a 'certificate too old to verify' catch based on the version?\" could only come from someone who had read the generated code and plan."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Every guideline that applied to the change (INDEX, coding, git, Python and the vibecert CLAUDE.md) was in context, the branch complies (Angular-form scoped commit subjects, no @property or Self, ruff passes), and the guidelines were actively applied, shown by the commit 'docs(vibecert): align guidance with house rules'."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 1,
+   "adjusted": 1,
+   "evidence": "28 of 1384 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The median is 52 generated lines across 18 producing prompts, just inside the 50 to 200 band; most of these prompts were 'y' approvals of planned units of work, but three of them each produced more than 200 lines (228, 256 and 327)."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 1126 lines of code, against a repository baseline of 0.0"
+  }
+ ],
+ "findings": [
+  "S310: Audit URL open for permitted schemes. Allowing use of `file:` or custom schemes is often unexpected.",
+  "S603: `subprocess` call: check for execution of untrusted input",
+  "S607: Starting a process with a partial executable path"
+ ]
+}
