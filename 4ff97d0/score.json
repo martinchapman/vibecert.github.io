@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-19T21:16:29.906694+00:00",
+ "identifier": "4ff97d0",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "mesa-build",
+ "branch": "feat/add-trainingdata-correction-config-skill",
+ "commits": 8,
+ "head": "c8b1fec534e14953e1601973e6e1100113a51b8b",
+ "uncommitted": true,
+ "changed_lines": 3668,
+ "generative_proportion": 0.36,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 2,
+  "risk": 2,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most human questions probe specific output, e.g. 'What uses show?', 'How are agent-brief files treated differently?', 'What's the purpose of the HTML comments?', 'Why are you specifically mentioning qwote here?', 'Why does json fail on model validate?' and 'Where in oncradqwen notebook do I specify the use of schema output?', and they could only be asked after reading the code."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The applicable rule files (INDEX, coding, git, python) were all in context, and the eight commit subjects follow the git rules (conventional type, lowercase, under 50 characters, no scope, no attribution lines), while the only unread guideline files are third-party .venv AGENTS.md/CLAUDE.md that do not govern this change."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "106 of 1320 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 9 across 18 of 161 prompts, well under 50, and most prompts name a unit of work, with only the 250-line test-and-CI prompt exceeding 200."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 876 lines of code, against a repository baseline of 0.047"
+  }
+ ],
+ "findings": [
+  "S311: Standard pseudo-random generators are not suitable for cryptographic purposes"
+ ]
+}
