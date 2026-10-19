@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-19T13:10:12.726799+00:00",
+ "identifier": "bd7a4f0",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 32,
+ "head": "eb3d1b800161cb006c532ec7755d2a5b59e429c7",
+ "uncommitted": true,
+ "changed_lines": 24544,
+ "generative_proportion": 0.359,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Questions such as #2 (the cascade delete bug and whether anything beyond refactoring changed), #4 (quoting a specific CLAUDE.md claim about the parser and asking for a full explanation), #10 (whether a quoted sentence is proposed or existing), #13 (TrialRequest vs CriterionFilter request, eligibility, polarity), #26-28 (the schema file and package naming) and #31-33 (why the tests were added, whether they were moved, whether the python rules were applied) reference specific identifiers and decisions that only someone who had read the output could ask."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The general coding, git, python and project CLAUDE.md files were in context and most commit subjects follow the Angular form, but the JavaScript rule file and frontend/src/CLAUDE.md were never read despite a large frontend diff, and the subjects 'incorporate documents' and 'Update .gitignore' break the commit rules."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 1,
+   "adjusted": 1,
+   "evidence": "30 of 4761 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 24 (13 of 48 prompts produced output), well under the 50-line threshold, with prompts like 'y' and small scoped corrections approving incremental steps; only the 218-line plan-issue and a 178-line step exceeded 100."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "169 comment lines over 3511 lines of code, against a repository baseline of 0.014"
+  }
+ ],
+ "findings": [
+  "personal data referenced"
+ ]
+}
