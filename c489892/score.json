@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-19T13:16:47.857988+00:00",
+ "identifier": "c489892",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 11,
+ "head": "eb3d1b800161cb006c532ec7755d2a5b59e429c7",
+ "uncommitted": true,
+ "changed_lines": 5632,
+ "generative_proportion": 0.769,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most questions dig into specific parts of the output: the cascade delete bug, a quoted line on the cohort query and parser, a quoted line on loading at startup ('is this proposed or existing functionality?'), why the module is named after the types file instead of being exported as schemas.py, and whether the tests are new or moved from backend."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The coding, git, Python and project CLAUDE.md guidelines were in context and the commit subjects follow the conventional form (for example test(schema): cover model validators), but JAVASCRIPT_CODING_PRACTICE.md, which covers the changed .github/workflows/test-integration.js, never reached context."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 1,
+   "adjusted": 1,
+   "evidence": "30 of 2753 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "13 of 50 prompts produced output, with a median of 24 generated lines each (band 3 is below 50), mostly 'y' approvals of single plan steps; only the /plan-issue prompt went past 200 lines (218)."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "134 comment lines over 1940 lines of code, against a repository baseline of 0.014"
+  }
+ ],
+ "findings": [
+  "personal data referenced"
+ ]
+}
