@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-10-22T14:58:59.962847+00:00",
+ "identifier": "b1d888e",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 9,
+ "head": "7122cc4d55e5c106b2678bd9f26845efee791f49",
+ "uncommitted": false,
+ "changed_lines": 1568,
+ "generative_proportion": 0.98,
+ "certified": true,
+ "score": 3.0,
+ "scored": 5,
+ "applicable": 5,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most of the human messages question the produced output by identifier or decision, e.g. #37 'What is the role of TYPES and frozenset here?', #6 'BlankAsNone sounds almost like some anon process', #24 'genome marker = GenomeDnaMarker?', #45 on logger param typing, #50 on TypeAdapter, #88 'CancerType: type in group mentions a conflict but I don't think covers the resolution?', so at least one could only come from someone who had read the code and docs."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The git, coding, Python and root CLAUDE.md rules were all in context, and the nine commit subjects follow the required form (lowercase, under 50 characters, no full stops, scope `tools` used and dropped correctly), while the unread backend, frontend and snowflake CLAUDE.md files do not cover the docs, CI and tools/ changes."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "615 of 1532 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 21, below the 50-line band 3 limit, and most requests name a single unit (rename a variable, switch to f-strings, reword one docs passage), though a few bare 'Yes'/'y' approvals accepted 166 to 312 lines."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "not_applicable",
+   "raw": null,
+   "adjusted": null,
+   "evidence": "no generated code this metric applies to"
+  }
+ ],
+ "findings": [
+  "personal data referenced"
+ ]
+}
