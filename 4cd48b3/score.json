@@ -1,0 +1,82 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-01T23:43:14.398546+00:00",
+ "identifier": "4cd48b3",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 6,
+ "head": "d82a5d8adc4f3cbf3fcd8570d9f1e4ce3be74581",
+ "uncommitted": true,
+ "changed_lines": 443,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.8,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 2,
+  "risk": 1,
+  "applied": 2
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most of the 372 messages are questions about specific output, such as 'Why are we using by alias?', 'What is L.1?', 'Doesn't this give it ecs and ssm access too?', 'The env is now only used once?' and 'Why do we disable the cache?', and these could only be asked by someone who had read the generated code and plan."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 2,
+   "evidence": "The Python, coding, git and project guidelines were all in context and the commits mostly follow the Angular form with a scope, but the 'wip(flows)' commit uses a type the git rules do not allow, and the Prefect AGENTS.md files that apply to the flow code were never read, so compliance is partial and nothing shows a rule actively changed a decision."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "549 of 157 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 23 (64 of 372 prompts produced output), well under the 50-line band 3 threshold, with work requested in plan-step units (e.g. incremental-commit of plan steps 2.1-2.6) despite a few larger outputs of 335 to 558 lines on 'y' plan approvals."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 78 lines of code, against a repository baseline of 0.018"
+  }
+ ],
+ "findings": []
+}
