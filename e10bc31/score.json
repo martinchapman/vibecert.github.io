@@ -1,0 +1,85 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-03T22:18:40.687029+00:00",
+ "identifier": "e10bc31",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "mesa-build",
+ "branch": "feat/datagen/add-cost-estimator",
+ "commits": 7,
+ "head": "9801779245377dc44e017fec633d2f196ca59a08",
+ "uncommitted": true,
+ "changed_lines": 634,
+ "generative_proportion": 1.0,
+ "certified": true,
+ "score": 2.3,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 2,
+  "criticality": 2,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Questions such as \"Why this list param? What does it achieve? Just multiple costings in a row?\" (74), \"How does the sampling work? First 50 or scattered throughout the corpus?\" (78), \"cumulative costs vs. costs?\" and \"Why cumulative? Why are costs connected? 100, 3000?\" (49, 50), \"Why this division?\" (44) and \"Does this work with the 'resume' functionality?\" (51) could only be asked by someone who had read the generated code."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The coding, Python, git and project CLAUDE.md rules that covered the datagen Python change were all in context, and most commits follow the Angular, lowercase and no-scope-clash form. Two subjects break the git rule's 50-character limit (\"refactor(datagen): estimate one sample size per call\" at 52 and \"fix(datagen): sample token counts to avoid throttling\" at 53), so compliance is partial, and nothing shows a rule changing a decision."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "65 of 620 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt was 17 (14 of 81 prompts produced output), and the requests name small units such as \"Add the check\" and \"Just stripping eu is fine\", though two prompts (\"Raise that issue\", 310 lines; \"Store the estimate in the object\", 494 lines) exceeded 200."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 500 lines of code, against a repository baseline of 0.045"
+  }
+ ],
+ "findings": [
+  "S106: Possible hardcoded password assigned to argument: \"password\"",
+  "S324: Probable use of insecure hash functions in `hashlib`: `md5`"
+ ]
+}
