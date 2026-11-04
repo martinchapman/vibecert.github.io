@@ -1,0 +1,85 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-04T17:17:34.731959+00:00",
+ "identifier": "09ca224",
+ "site": "https://vibecert.github.io",
+ "private": false,
+ "repository": "MESA-Docsynth",
+ "branch": "feat/add-document-corrector",
+ "commits": 6,
+ "head": "29933ebe761f5718bd2114e72e6926777d3653af",
+ "uncommitted": false,
+ "changed_lines": 1084,
+ "generative_proportion": 0.908,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 2,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Several questions could only come from reading the output, such as #4 ('It also reverses a check the runner makes on purpose' -- explain), #36 (classvars versus nothing), #40 (request versus judgement), #43 ('What's this check for?') and #47 (whether 'unmodified' avoids re-replacing fixed documents), although others (#1, #13, #15) are task-level questions."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The coding, git and python rule files that cover this Python change were all in context, and the six commit subjects follow the git rules (lowercase Angular form, under 50 characters, no scope, no trailing full stop); the only guidelines never read are litellm AGENTS.md files inside .venv, which do not govern the branch's own code."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 1,
+   "adjusted": 1,
+   "evidence": "8 of 954 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 17 (14 of 52 prompts produced output), well below 50, and prompts name small units such as 'Let's make these an enum', 'Rename the function' and 'Drop this', though a few bare 'y' approvals accepted 136 to 464 lines."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 795 lines of code, against a repository baseline of 0.003"
+  }
+ ],
+ "findings": [
+  "S106: Possible hardcoded password assigned to argument: \"password\"",
+  "S324: Probable use of insecure hash functions in `hashlib`: `md5`"
+ ]
+}
