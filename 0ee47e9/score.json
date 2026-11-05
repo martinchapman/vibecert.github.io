@@ -1,0 +1,82 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-05T13:02:14.549410+00:00",
+ "identifier": "0ee47e9",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 10,
+ "head": "17944cd45e6d9ba7f34a261615f3b656dd30cbbf",
+ "uncommitted": true,
+ "changed_lines": 1785,
+ "generative_proportion": 0.675,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 1,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Many of the questions point at specific parts of the generated code, such as \"'+asyncpg'?\", \"'CMD-SHELL'?\", \"What is value_wo\", \"Why these locals?\", \"Why are we using by alias?\" and \"Show me that kepair change as a diff\", and none of these could be asked without reading the output."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "The coding, git, IaC, Python and project CLAUDE.md rules were in context and the diff broadly complies with them (commit subjects such as `feat(api): add prefect proxy handler` follow the scoped Angular form), but the branch adds `api/cloudfront_functions/basic_auth.js`, which the JavaScript rule file covers, and that file never reached context."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "858 of 1202 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "The median is 26 generated lines across the 73 prompts that produced output, which is under the band-3 threshold of 50, and most prompts ask for a single change (e.g. 'Split to a types file, and a dedicated file for the Prefect class'); the few large outputs, such as 535 lines from 'Keep Cloudfront' and 558 from a 'y', approve plan steps that had already been laid out, so they do not outweigh the median."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "1 comment lines over 925 lines of code, against a repository baseline of 0.012"
+  }
+ ],
+ "findings": []
+}
