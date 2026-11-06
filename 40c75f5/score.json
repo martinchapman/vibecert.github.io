@@ -1,26 +1,26 @@
 {
  "schema_version": "vibecert/certificate@2",
  "rubrics_version": "vibecert/rubrics@1",
- "issued_at": "2026-11-06T12:02:50.254331+00:00",
+ "issued_at": "2026-11-06T12:12:46.972996+00:00",
  "identifier": "40c75f5",
  "site": "https://vibecert.github.io",
  "private": false,
  "repository": "mesa-build",
  "branch": "feat/flag-records-for-claude-correction",
- "commits": 6,
- "head": "261c04b412f60539ce410e6eb4c17d4a380b56cb",
+ "commits": 5,
+ "head": "236fa89d98921379b7a5628aafeaf26710e0fb6e",
  "uncommitted": true,
- "changed_lines": 878,
+ "changed_lines": 456,
  "generative_proportion": 1.0,
  "certified": true,
- "score": 2.3,
+ "score": 2.5,
  "scored": 6,
  "applicable": 6,
  "weights": {
-  "length": 3,
+  "length": 2,
   "criticality": 2,
-  "risk": 3,
-  "applied": 3
+  "risk": 2,
+  "applied": 2
  },
  "metrics": [
   {
@@ -30,7 +30,7 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "Most follow-up questions are about specific output: one quotes the reported 'Missing lung side (528 records)' finding and asks how it can occur under a valid schema, and others ask about the added generics, a missing heading, and why chestradqwen has only one flag."
+   "evidence": "Most of the questions are about specific parts of the output, and some could only come from reading it: 'Why this addition of generics?' (followed by 'I'm guessing the generics are implied rather than set anywhere'), 'Doesn't this need a new heading?', 'how is this possible if the schema is valid?' (asked about the quoted 'Missing lung side (528 records)' finding) and 'Only 1 flag for chestradqwen, despite the long list?'."
   },
   {
    "number": 2,
@@ -38,8 +38,8 @@
    "title": "Coding guidelines",
    "state": "scored",
    "raw": 2,
-   "adjusted": 1,
-   "evidence": "Every applicable rule file was in context (the general, coding, git and Python rules and mesa-build's CLAUDE.md; the litellm AGENTS.md files are vendored .venv files), and the code broadly complies, with typed locals and Google-style docstrings in batch_corrector.py and correction_rules.py, but compliance is partial: three of the six commit subjects break the 50-character limit ('feat(datagen): add add_items, dedupe and flag actions' is 53, and 'feat(pipelines): add chestradqwen correction config' and 'feat: support flag rules in correction config skill' are 51 each)."
+   "adjusted": 2,
+   "evidence": "Every applicable rule file (git, coding, python, the repo's CLAUDE.md) was in context, and the branch follows most of them: the commit subjects use the right Angular scopes, the feature release gets a minor bump (1.6.0 to 1.7.0, committed as `chore(datagen): bump version`), and the new public `CorrectionRules.flag` has a Google-style docstring. Compliance is still partial, because the rewritten docstrings for `Corpus.census`, `BatchOutputCorrector.correct_with_claude` and `DryRun.run` stretch their summaries over two lines, against the python rule that a docstring holds a one-line summary."
   },
   {
    "number": 3,
@@ -48,7 +48,7 @@
    "state": "scored",
    "raw": 1,
    "adjusted": 1,
-   "evidence": "14 of 809 generated lines were rewritten after the author challenged them"
+   "evidence": "14 of 387 generated lines were rewritten after the author challenged them"
   },
   {
    "number": 4,
@@ -57,7 +57,7 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "The median is 26 generated lines per producing prompt across 11 prompts, which places the branch in band 3, and the prompts name units of work (a run-status mechanism, no ids in files, a default path when there are no rules); the one outlier is a single prompt that bundled add_items, dedupe, the flag route and the rules into 769 lines."
+   "evidence": "The median is 26 generated lines across the 11 prompts that produced output, which is well inside the below-50 band, and most prompts name one unit of work; the exception is a single bundled prompt (\"Go ahed with add_items, dedupe and the full flag route ... Then write rules\") that produced 769 lines."
   },
   {
    "number": 5,
@@ -75,11 +75,10 @@
    "state": "scored",
    "raw": 3,
    "adjusted": 3,
-   "evidence": "4 comment lines over 694 lines of code, against a repository baseline of 0.045"
+   "evidence": "0 comment lines over 339 lines of code, against a repository baseline of 0.045"
   }
  ],
  "findings": [
-  "S311: Standard pseudo-random generators are not suitable for cryptographic purposes",
-  "personal data referenced"
+  "S311: Standard pseudo-random generators are not suitable for cryptographic purposes"
  ]
 }
