@@ -1,0 +1,84 @@
+{
+ "schema_version": "vibecert/certificate@2",
+ "rubrics_version": "vibecert/rubrics@1",
+ "issued_at": "2026-11-25T23:43:08.217421+00:00",
+ "identifier": "6a3003d",
+ "site": "https://vibecert.github.io",
+ "private": true,
+ "repository": null,
+ "branch": null,
+ "commits": 20,
+ "head": "fe3872b476418f46ff05d4a5f1a306eef8ddb2a5",
+ "uncommitted": false,
+ "changed_lines": 2709,
+ "generative_proportion": 0.961,
+ "certified": true,
+ "score": 2.7,
+ "scored": 6,
+ "applicable": 6,
+ "weights": {
+  "length": 3,
+  "criticality": 3,
+  "risk": 3,
+  "applied": 3
+ },
+ "metrics": [
+  {
+   "number": 1,
+   "name": "follow_up_questions",
+   "title": "Follow-up questions",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Most of the roughly 60 questions could only be asked after reading the output: 'all share the same cohort info, hence records[0]?', 'Should this not thus be labelled HaystackEligibilityCriterion?', 'with a *remaining* site? remaining?', 'We already chose to keep activity range from 1900 to build date. Why did you lose that?', 'is this definitely a mapping?'."
+  },
+  {
+   "number": 2,
+   "name": "coding_guidelines",
+   "title": "Coding guidelines",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Every guideline the diff touches (Python coding and testing, git, core and coding practice, and the root, backend and frontend CLAUDE.md files) was in context, all 20 commit subjects follow the Angular form with scope `tools` and are lowercase and under 50 characters, and the `nit(tools): declare constructor fields final` commit shows a rule applied actively; the only unread file, deploy/snowflake/CLAUDE.md, is not touched by the changed files."
+  },
+  {
+   "number": 3,
+   "name": "output_amendments",
+   "title": "Output amendments",
+   "state": "scored",
+   "raw": 2,
+   "adjusted": 1,
+   "evidence": "267 of 2424 generated lines were rewritten after the author challenged them"
+  },
+  {
+   "number": 4,
+   "name": "prompt_granularity",
+   "title": "Prompt granularity",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "Median generated lines per producing prompt is 23 (58 of 145 prompts produced output), well under 50, and prompts name small units of work such as 'needs a type' and 'Groups here should be a type too', with the large outputs coming from approvals of staged changes ('y')."
+  },
+  {
+   "number": 5,
+   "name": "secondary_tools",
+   "title": "Secondary tool usage",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "behavioural checks configured and ran"
+  },
+  {
+   "number": 6,
+   "name": "generative_comments",
+   "title": "Generative comments",
+   "state": "scored",
+   "raw": 3,
+   "adjusted": 3,
+   "evidence": "0 comment lines over 1717 lines of code, against a repository baseline of 0.012"
+  }
+ ],
+ "findings": [
+  "personal data referenced"
+ ]
+}
